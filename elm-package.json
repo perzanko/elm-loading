@@ -1,0 +1,18 @@
+{
+    "version": "0.1.0",
+    "summary": "Simple loading spinners animated in CSS for your elm application.",
+    "repository": "https://github.com/perzanko/elm-loading.git",
+    "license": "MIT",
+    "source-directories": [
+        "src"
+    ],
+    "exposed-modules": [
+        "Loading"
+    ],
+    "dependencies": {
+        "elm/core": "1.0.0",
+        "elm/html": "1.0.0",
+        "rtfeldman/elm-css": "15.1.0"
+    },
+    "elm-version": "0.19.0"
+}
