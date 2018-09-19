@@ -23,15 +23,18 @@ view config =
 
         outerStyle =
             [ width (px config.size)
-            , height (px <| config.size * 0.95)
+            , height (px (config.size * 0.95))
             , position relative
             , margin2 (px 0) auto
             ]
 
         childStyle =
-            [ property "border" <| String.fromFloat (config.size * 0.17) ++ "px " ++ "rgba(" ++ config.color ++ ", 0.25) solid"
-            , property "border-top" <| String.fromFloat (config.size * 0.17) ++ "px " ++ "rgba(" ++ config.color ++ ", 0.8) solid"
+            [ width (px <| config.size - 2 * (config.size * 0.17))
+            , height (px <| config.size - 2 * (config.size * 0.17))
             , borderRadius (pct 50)
+            , position absolute
+            , top (px 0)
+            , left (px 0)
             , property "animation-duration" <| withSpeed 1.33 ++ "s"
             , property "animation-timing-function" "cubic-bezier(.51,.92,.24,1.15)"
             , property "animation-iteration-count" "infinite"
@@ -51,6 +54,24 @@ view config =
     div
         [ css outerStyle, class config.className ]
         [ div
-            [ css childStyle ]
+            [ css <|
+                List.concat
+                    [ childStyle
+                    , [ property "border" <| String.fromFloat (config.size * 0.17) ++ "px " ++ config.color ++ " solid"
+                      , opacity (num 0.25)
+                      ]
+                    ]
+            ]
+            []
+        , div
+            [ css <|
+                List.concat
+                    [ childStyle
+                    , [ property "border" <| String.fromFloat (config.size * 0.17) ++ "px transparent solid"
+                      , property "border-top" <| String.fromFloat (config.size * 0.17) ++ "px " ++ config.color ++ " solid"
+                      , opacity (num 0.8)
+                      ]
+                    ]
+            ]
             []
         ]

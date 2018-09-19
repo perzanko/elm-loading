@@ -1,27 +1,23 @@
 {
-    "type": "application",
+    "type": "package",
+    "name": "perzanko/elm-loading",
+    "summary": "Simple loading spinners animated in CSS for your elm application.",
+    "license": "MIT",
+    "version": "0.1.0",
     "source-directories": [
         "src"
     ],
-    "elm-version": "0.19.0",
+    "exposed-modules": [
+        "Loading"
+    ],
+    "elm-version": "0.19.0 <= v < 0.20.0",
     "dependencies": {
-        "direct": {
-            "elm/browser": "1.0.0",
-            "elm/core": "1.0.0",
-            "elm/html": "1.0.0",
-            "rtfeldman/elm-css": "15.1.0"
-        },
-        "indirect": {
-            "Skinney/murmur3": "2.0.7",
-            "elm/json": "1.0.0",
-            "elm/time": "1.0.0",
-            "elm/url": "1.0.0",
-            "elm/virtual-dom": "1.0.2",
-            "rtfeldman/elm-hex": "1.0.0"
-        }
+        "elm/browser": "1.0.0 <= v < 2.0.0",
+        "elm/core": "1.0.0 <= v < 2.0.0",
+        "elm/html": "1.0.0 <= v < 2.0.0",
+        "elm/json": "1.0.0 <= v < 2.0.0",
+        "elm/time": "1.0.0 <= v < 2.0.0",
+        "rtfeldman/elm-css": "15.1.0 <= v < 16.0.0"
     },
-    "test-dependencies": {
-        "direct": {},
-        "indirect": {}
-    }
+    "test-dependencies": { }
 }

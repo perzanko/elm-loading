@@ -2,13 +2,44 @@ module Loading exposing
     ( Config
     , LoaderType(..)
     , LoadingState(..)
-    , Model
     , defaultConfig
     , init
     , show
     )
 
--- imports
+{-| Lorem ipsum dolor....
+
+
+# Config
+
+@docs Config
+
+
+# Loader types
+
+@docs LoaderType
+
+
+# Loading states
+
+@docs LoadingState
+
+
+# Default config
+
+@docs defaultConfig
+
+
+# Initialize model
+
+@docs init
+
+
+# Show loader
+
+@docs show
+
+-}
 
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
@@ -17,6 +48,7 @@ import Loading.Bars as Bars
 import Loading.BouncingBalls as BouncingBalls
 import Loading.Circle as Circle
 import Loading.DoubleBounce as DoubleBounce
+import Loading.Sonar as Sonar
 import Loading.Spinner as Spinner
 
 
@@ -26,6 +58,7 @@ type alias Model =
     }
 
 
+{-| -}
 type alias Config =
     { size : Float
     , color : String
@@ -34,28 +67,33 @@ type alias Config =
     }
 
 
+{-| -}
 type LoadingState
     = On
     | Off
 
 
+{-| -}
 type LoaderType
     = DoubleBounce
     | Spinner
     | BouncingBalls
     | Bars
     | Circle
+    | Sonar
 
 
+{-| -}
 defaultConfig : Config
 defaultConfig =
     { size = 30
-    , color = "#92cd54"
+    , color = "#74b4c9"
     , className = ""
     , speed = 1
     }
 
 
+{-| -}
 init : Config -> LoadingState -> Model
 init config loadingState =
     { config = config
@@ -63,6 +101,7 @@ init config loadingState =
     }
 
 
+{-| -}
 show : LoaderType -> Model -> Html a
 show loaderType model =
     let
@@ -82,6 +121,9 @@ show loaderType model =
 
                 Circle ->
                     toUnstyled <| Circle.view model.config
+
+                Sonar ->
+                    toUnstyled <| Sonar.view model.config
     in
     case model.loadingState of
         On ->
