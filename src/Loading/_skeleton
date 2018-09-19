@@ -1,0 +1,28 @@
+-- module Loading.Name exposing (view)
+-- import Css exposing (..)
+-- import Css.Animations exposing (custom, keyframes)
+-- import Html
+-- import Html.Styled exposing (Html, div)
+-- import Html.Styled.Attributes exposing (class, css, href, src)
+-- type alias Config =
+--     { size : Float
+--     , color : String
+--     , className : String
+--     , speed : Float
+--     }
+-- view : Config -> Html msg
+-- view config =
+--     let
+--         outerStyle =
+--             [ width (px config.size)
+--             , height (px config.size)
+--             , position relative
+--             , margin2 (px 0) auto
+--             ]
+--     in
+--     div
+--         [ css outerStyle, class config.className ]
+--         [ div
+--             []
+--             []
+--         ]

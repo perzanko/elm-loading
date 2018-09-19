@@ -13,6 +13,9 @@ module Loading exposing
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
 import Html.Styled exposing (toUnstyled)
+import Loading.Bars as Bars
+import Loading.BouncingBalls as BouncingBalls
+import Loading.Circle as Circle
 import Loading.DoubleBounce as DoubleBounce
 import Loading.Spinner as Spinner
 
@@ -39,6 +42,9 @@ type LoadingState
 type LoaderType
     = DoubleBounce
     | Spinner
+    | BouncingBalls
+    | Bars
+    | Circle
 
 
 defaultConfig : Config
@@ -67,6 +73,15 @@ show loaderType model =
 
                 Spinner ->
                     toUnstyled <| Spinner.view model.config
+
+                BouncingBalls ->
+                    toUnstyled <| BouncingBalls.view model.config
+
+                Bars ->
+                    toUnstyled <| Bars.view model.config
+
+                Circle ->
+                    toUnstyled <| Circle.view model.config
     in
     case model.loadingState of
         On ->
