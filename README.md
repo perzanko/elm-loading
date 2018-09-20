@@ -3,7 +3,7 @@
 `elm-loading` provides beautiful loaders animated in [elm-css](https://github.com/rtfeldman/elm-css) for your elm application. ✌
 
 
-![Loaders example](https://raw.githubusercontent.com/perzanko/elm-loading/master/examples/examples.gif =600x)
+![Loaders example](https://raw.githubusercontent.com/perzanko/elm-loading/master/examples/examples.gif)
 
 
 ## Install
