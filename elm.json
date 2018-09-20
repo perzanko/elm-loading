@@ -17,7 +17,7 @@
         "elm/html": "1.0.0 <= v < 2.0.0",
         "elm/json": "1.0.0 <= v < 2.0.0",
         "elm/time": "1.0.0 <= v < 2.0.0",
-        "rtfeldman/elm-css": "15.1.0 <= v < 16.0.0"
+        "rtfeldman/elm-cssf": "15.1.0 <= v < 16.0.0"
     },
     "test-dependencies": { }
 }

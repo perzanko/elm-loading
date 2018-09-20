@@ -3,8 +3,7 @@ module Loading exposing
     , LoaderType(..)
     , LoadingState(..)
     , defaultConfig
-    , init
-    , show
+    , render
     )
 
 {-| Lorem ipsum dolor....
@@ -30,14 +29,9 @@ module Loading exposing
 @docs defaultConfig
 
 
-# Initialize model
+# render loader
 
-@docs init
-
-
-# Show loader
-
-@docs show
+@docs render
 
 -}
 
@@ -94,38 +88,30 @@ defaultConfig =
 
 
 {-| -}
-init : Config -> LoadingState -> Model
-init config loadingState =
-    { config = config
-    , loadingState = loadingState
-    }
-
-
-{-| -}
-show : LoaderType -> Model -> Html a
-show loaderType model =
+render : LoaderType -> Config -> LoadingState -> Html a
+render loaderType config loadingState =
     let
         loader =
             case loaderType of
                 DoubleBounce ->
-                    toUnstyled <| DoubleBounce.view model.config
+                    toUnstyled <| DoubleBounce.view config
 
                 Spinner ->
-                    toUnstyled <| Spinner.view model.config
+                    toUnstyled <| Spinner.view config
 
                 BouncingBalls ->
-                    toUnstyled <| BouncingBalls.view model.config
+                    toUnstyled <| BouncingBalls.view config
 
                 Bars ->
-                    toUnstyled <| Bars.view model.config
+                    toUnstyled <| Bars.view config
 
                 Circle ->
-                    toUnstyled <| Circle.view model.config
+                    toUnstyled <| Circle.view config
 
                 Sonar ->
-                    toUnstyled <| Sonar.view model.config
+                    toUnstyled <| Sonar.view config
     in
-    case model.loadingState of
+    case loadingState of
         On ->
             div [ class "loading" ] [ loader ]
 
