@@ -6,7 +6,7 @@ module Loading exposing
     , render
     )
 
-{-| Lorem ipsum dolor....
+{-|
 
 
 # Config
@@ -16,10 +16,14 @@ module Loading exposing
 
 # Loader types
 
+You can choose one of these loaders:
+
 @docs LoaderType
 
 
 # Loading states
+
+The loaders will be rendered according on the LoadingState. If you pass `Loading.On` loader will be displayed, if `Loading.Off` loader will be hidden (will not be hidden by css, only node will be removed).
 
 @docs LoadingState
 
@@ -29,7 +33,9 @@ module Loading exposing
 @docs defaultConfig
 
 
-# render loader
+# Render loader
+
+`Loading.render` takes 3 arguments: `LoaderType`, `Config`, `LoadingState`.
 
 @docs render
 
@@ -87,7 +93,18 @@ defaultConfig =
     }
 
 
-{-| -}
+{-|
+
+    view : Model -> Html Msg
+    view model =
+        div []
+            [ Loading.render
+                DoubleBounce
+                { defaultConfig | color = "#333" }
+                Loading.On
+            ]
+
+-}
 render : LoaderType -> Config -> LoadingState -> Html a
 render loaderType config loadingState =
     let
