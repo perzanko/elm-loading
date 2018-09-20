@@ -3,10 +3,7 @@
     "name": "perzanko/elm-loading",
     "summary": "Simple loading spinners animated in CSS for your elm application.",
     "license": "MIT",
-    "version": "1.0.0",
-    "source-directories": [
-        "src"
-    ],
+    "version": "2.0.0",
     "exposed-modules": [
         "Loading"
     ],
@@ -19,5 +16,5 @@
         "elm/time": "1.0.0 <= v < 2.0.0",
         "rtfeldman/elm-css": "15.1.0 <= v < 16.0.0"
     },
-    "test-dependencies": { }
+    "test-dependencies": {}
 }
