@@ -84,3 +84,5 @@ defaultConfig =
     , speed = 1
     }
 ```
+
+css spinner, css loading, css animation loading
